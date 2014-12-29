@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A8D5F6A52DE56A14EC1B025 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC234E8E9559172276459250 /* libPods.a */; };
 		1A8123C31A51BA3D00EEE862 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8123C21A51BA3D00EEE862 /* main.m */; };
 		1A8123C61A51BA3E00EEE862 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8123C51A51BA3D00EEE862 /* AppDelegate.m */; };
 		1A8123C91A51BA3E00EEE862 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8123C81A51BA3E00EEE862 /* ViewController.m */; };
@@ -40,6 +41,9 @@
 		1A8123D61A51BA3E00EEE862 /* ZornPixateDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZornPixateDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A8123DB1A51BA3E00EEE862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A8123DC1A51BA3E00EEE862 /* ZornPixateDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZornPixateDemoTests.m; sourceTree = "<group>"; };
+		22F5045400E453324D76FE23 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7F1064A738EEEC8BF771116F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BC234E8E9559172276459250 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A8D5F6A52DE56A14EC1B025 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,8 @@
 				1A8123BF1A51BA3D00EEE862 /* ZornPixateDemo */,
 				1A8123D91A51BA3E00EEE862 /* ZornPixateDemoTests */,
 				1A8123BE1A51BA3D00EEE862 /* Products */,
+				BEF5D113D234C920BC372EBA /* Pods */,
+				A19DBDC38A9F50B33A2EFE4D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +126,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A19DBDC38A9F50B33A2EFE4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC234E8E9559172276459250 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BEF5D113D234C920BC372EBA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F1064A738EEEC8BF771116F /* Pods.debug.xcconfig */,
+				22F5045400E453324D76FE23 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A8123E01A51BA3E00EEE862 /* Build configuration list for PBXNativeTarget "ZornPixateDemo" */;
 			buildPhases = (
+				D2FCAB14113FA92216AE297F /* Check Pods Manifest.lock */,
 				1A8123B91A51BA3D00EEE862 /* Sources */,
 				1A8123BA1A51BA3D00EEE862 /* Frameworks */,
 				1A8123BB1A51BA3D00EEE862 /* Resources */,
+				B7200ED6E61AA1B60C8B11DC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,6 +240,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B7200ED6E61AA1B60C8B11DC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2FCAB14113FA92216AE297F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1A8123B91A51BA3D00EEE862 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -297,7 +356,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -332,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -341,9 +400,11 @@
 		};
 		1A8123E11A51BA3E00EEE862 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F1064A738EEEC8BF771116F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZornPixateDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -351,9 +412,11 @@
 		};
 		1A8123E21A51BA3E00EEE862 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22F5045400E453324D76FE23 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZornPixateDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +475,7 @@
 				1A8123E21A51BA3E00EEE862 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A8123E31A51BA3E00EEE862 /* Build configuration list for PBXNativeTarget "ZornPixateDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +484,7 @@
 				1A8123E51A51BA3E00EEE862 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
